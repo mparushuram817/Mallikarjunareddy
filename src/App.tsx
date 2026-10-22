@@ -40,8 +40,8 @@ export default function App() {
     addressTe: "6-305-25, టి జి ఎల్ కాలనీ, టి జి ఎల్ హైస్కూల్ దగ్గర, ఆదోని, కర్నూలు జిల్లా, ఆంధ్రప్రదేశ్ - 518301",
     phone: "+91 90104 52529",
     phoneRaw: "+919010452529",
-    email: "info@gmallikarjunareddy.in",
-    domain: "gmallikarjunareddy.in",
+    email: "info@mallikarjunareddy.online",
+    domain: "mallikarjunareddy.online",
     photoWebp: "/assets/aistudio/candidate_portrait.webp",
     photoJpg: "/assets/aistudio/candidate_portrait.jpg",
     photoOriginal: "/assets/aistudio/45576497_591739731275174_8598520841510060032_n_18a715f0.jpg"
