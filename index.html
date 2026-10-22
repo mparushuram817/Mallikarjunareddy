@@ -18,10 +18,20 @@
     <meta name="twitter:title" content="G Mallikarjuna Reddy | Adoni Chairman Candidate" />
     <meta name="twitter:description" content="Official campaign website of G Mallikarjuna Reddy, Candidate for Chairman, Adoni Municipality, Kurnool District, Andhra Pradesh." />
 
-    <!-- Google Fonts: Noto Sans Telugu & Inter -->
+    <!-- Resource Preloads & Performance Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Telugu:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="dns-prefetch" href="https://www.google.com" />
+
+    <!-- Preload Hero Portrait for Instant LCP -->
+    <link rel="preload" as="image" href="/assets/aistudio/candidate_portrait.webp" type="image/webp" fetchpriority="high" />
+
+    <!-- High-Performance Non-Blocking Font Loading (400, 600, 700 weights only) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&display=swap" />
+    </noscript>
   </head>
   <body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-600 selection:text-white min-h-screen">
     <div id="root"></div>

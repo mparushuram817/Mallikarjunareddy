@@ -42,7 +42,9 @@ export default function App() {
     phoneRaw: "+919010452529",
     email: "info@gmallikarjunareddy.in",
     domain: "gmallikarjunareddy.in",
-    photoUrl: "/assets/aistudio/45576497_591739731275174_8598520841510060032_n_18a715f0.jpg"
+    photoWebp: "/assets/aistudio/candidate_portrait.webp",
+    photoJpg: "/assets/aistudio/candidate_portrait.jpg",
+    photoOriginal: "/assets/aistudio/45576497_591739731275174_8598520841510060032_n_18a715f0.jpg"
   };
 
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
@@ -301,28 +303,25 @@ export default function App() {
                 {/* Candidate Photo Card Frame */}
                 <div className="relative bg-white p-3 rounded-2xl shadow-xl border-2 border-slate-200 overflow-hidden">
                   <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-slate-100 border border-slate-200">
-                    <img
-                      src={candidateData.photoUrl}
-                      alt="G Mallikarjuna Reddy - Candidate for Chairman, Adoni Municipality (Replace this photo by editing the image path)"
-                      className="w-full h-full object-cover object-center"
-                      loading="eager"
-                      onError={(e) => {
-                        // Fallback UI in case asset path cannot be found
-                        const target = e.currentTarget;
-                        target.style.display = 'none';
-                        const parent = target.parentElement;
-                        if (parent) {
-                          const fallback = document.createElement('div');
-                          fallback.className = 'w-full h-full flex flex-col items-center justify-center p-6 text-center bg-blue-50 text-blue-900';
-                          fallback.innerHTML = `
-                            <svg class="w-16 h-16 text-blue-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                            <p class="font-bold text-lg">G Mallikarjuna Reddy</p>
-                            <p class="text-xs text-slate-600 mt-1">Candidate Photo Placeholder</p>
-                          `;
-                          parent.appendChild(fallback);
-                        }
-                      }}
-                    />
+                    <picture>
+                      <source srcSet={candidateData.photoWebp} type="image/webp" />
+                      <img
+                        src={candidateData.photoJpg}
+                        alt="G Mallikarjuna Reddy - Candidate for Chairman, Adoni Municipality (Replace this photo by editing the image path)"
+                        width="720"
+                        height="720"
+                        fetchPriority="high"
+                        decoding="async"
+                        className="w-full h-full object-cover object-center"
+                        onError={(e) => {
+                          // Fallback to original image if needed
+                          const target = e.currentTarget;
+                          if (target.src !== candidateData.photoOriginal) {
+                            target.src = candidateData.photoOriginal;
+                          }
+                        }}
+                      />
+                    </picture>
 
                     {/* Official Stamp Badge */}
                     <div className="absolute bottom-3 left-3 right-3 bg-slate-900/85 backdrop-blur-md text-white text-xs py-2 px-3 rounded-lg flex items-center justify-between border border-white/20 shadow-md">
