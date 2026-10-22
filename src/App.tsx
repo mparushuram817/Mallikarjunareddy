@@ -26,9 +26,13 @@ export default function App() {
 
   const candidateData = {
     nameEn: "G Mallikarjuna Reddy",
+    nameEnCaps: "G MALLIKARJUNA REDDY",
     nameTe: "జి. మల్లికార్జున రెడ్డి",
     roleEn: "Candidate for Chairman, Adoni Municipality",
     roleTe: "చైర్మన్ అభ్యర్థి, ఆదోని పురపాలక సంఘం",
+    campaignStatement: "Official campaign website of G MALLIKARJUNA REDDY, Candidate for Chairman, Adoni Municipality",
+    paidForBy: "Paid for by G MALLIKARJUNA REDDY",
+    shortAddress: "ADONI, AP",
     districtEn: "Kurnool District, Andhra Pradesh",
     districtTe: "కర్నూలు జిల్లా, ఆంధ్రప్రదేశ్",
     taglineTe: "ఆదోని అభివృద్ధే నా లక్ష్యం",
@@ -38,7 +42,8 @@ export default function App() {
     partyTe: "వైఎస్సార్‌సీపీ (YSRCP)",
     address: "6-305-25, T G L Colony, Near T G L High School, Adoni, Andhra Pradesh - 518301",
     addressTe: "6-305-25, టి జి ఎల్ కాలనీ, టి జి ఎల్ హైస్కూల్ దగ్గర, ఆదోని, కర్నూలు జిల్లా, ఆంధ్రప్రదేశ్ - 518301",
-    phone: "+91 90104 52529",
+    phone: "+91 9010452529",
+    phoneDisplay: "+91 90104 52529",
     phoneRaw: "+919010452529",
     email: "info@mallikarjunareddy.online",
     domain: "mallikarjunareddy.online",
@@ -61,20 +66,33 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col font-english">
-      {/* Top Civic Verification & Party Banner */}
-      <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-emerald-800 text-white text-xs sm:text-sm py-2 px-4 shadow-sm border-b border-emerald-600/30">
-        <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-2 font-medium">
-            <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span className="font-telugu">అధికారిక ఎన్నికల ప్రచార వెబ్‌సైట్</span>
-            <span className="hidden sm:inline text-blue-200">|</span>
-            <span className="hidden sm:inline">Official Campaign Website</span>
+      {/* Top Civic Verification & Official Meta Disclaimer Banner */}
+      <div className="bg-gradient-to-r from-blue-950 via-blue-900 to-emerald-900 text-white text-xs py-2.5 px-4 shadow-sm border-b border-emerald-500/40">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row lg:items-center justify-between gap-2">
+          <div className="space-y-1">
+            <div className="flex items-center gap-2 font-medium flex-wrap">
+              <span className="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span className="font-extrabold tracking-wide uppercase text-white">G MALLIKARJUNA REDDY</span>
+              <span className="text-blue-300">|</span>
+              <span className="text-slate-100 font-semibold">Official campaign website of G MALLIKARJUNA REDDY, Candidate for Chairman, Adoni Municipality</span>
+            </div>
+            <div className="text-xs text-blue-100 flex items-center gap-2.5 flex-wrap font-medium">
+              <span className="bg-emerald-600 text-white px-2 py-0.5 rounded font-bold text-[11px] uppercase tracking-wider">
+                Paid for by G MALLIKARJUNA REDDY
+              </span>
+              <span>•</span>
+              <span className="font-semibold text-slate-200">Address: ADONI, AP</span>
+              <span>•</span>
+              <a href="tel:+919010452529" className="hover:text-emerald-300 hover:underline transition">Phone: +91 9010452529</a>
+              <span>•</span>
+              <a href="mailto:info@mallikarjunareddy.online" className="hover:text-emerald-300 hover:underline transition">Email: info@mallikarjunareddy.online</a>
+            </div>
           </div>
-          <div className="flex items-center gap-3">
-            <span className="bg-emerald-700/80 hover:bg-emerald-700 text-emerald-100 font-semibold px-2.5 py-0.5 rounded text-xs tracking-wider border border-emerald-400/30">
+          <div className="flex items-center gap-2 self-start lg:self-auto shrink-0 pt-1 lg:pt-0">
+            <span className="bg-emerald-700/90 text-emerald-100 font-semibold px-2.5 py-0.5 rounded text-xs tracking-wider border border-emerald-400/30">
               Party: {candidateData.party}
             </span>
-            <span className="text-blue-100 font-mono text-xs hidden md:inline">
+            <span className="text-blue-200 font-mono text-xs">
               {candidateData.domain}
             </span>
           </div>
@@ -86,14 +104,14 @@ export default function App() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-18 sm:h-20 flex items-center justify-between">
           {/* Logo / Candidate Header Identity */}
           <a href="#hero" className="flex flex-col group">
-            <span className="font-telugu font-bold text-lg sm:text-xl text-blue-900 group-hover:text-blue-700 transition">
+            <span className="font-telugu font-bold text-sm sm:text-base text-blue-900 group-hover:text-blue-700 transition">
               {candidateData.nameTe}
             </span>
-            <span className="font-bold text-sm sm:text-base text-slate-900 tracking-tight">
-              {candidateData.nameEn}
+            <span className="font-black text-base sm:text-lg text-slate-900 tracking-tight">
+              G MALLIKARJUNA REDDY
             </span>
-            <span className="text-xs font-medium text-emerald-700">
-              Adoni Municipality • YSRCP
+            <span className="text-[11px] sm:text-xs font-semibold text-emerald-700">
+              Candidate for Chairman, Adoni Municipality
             </span>
           </a>
 
@@ -704,17 +722,30 @@ export default function App() {
             </div>
 
             {/* Disclaimer & Transparency Statement */}
-            <div className="mt-8 pt-6 border-t border-slate-200/80 text-xs sm:text-sm text-slate-600 bg-white/70 p-4 rounded-xl">
-              <div className="flex items-start gap-2.5">
-                <Info className="w-4 h-4 text-blue-700 shrink-0 mt-0.5" />
-                <div className="space-y-1">
-                  <p className="font-medium text-slate-800">
-                    <strong className="text-blue-950">Meta / Facebook Ad Disclaimer Verification Notice:</strong> This single-page official website confirms the political candidacy and identity of <span className="font-semibold text-slate-900">G Mallikarjuna Reddy</span> for Chairman, Adoni Municipality. All contact coordinates, address, telephone number, and email address listed here are official and active.
-                  </p>
-                  <p className="font-telugu text-slate-600">
-                    ఆదోని మునిసిపాలిటీ ఎన్నికల అధికారిక సమాచారం మరియు ధ్రువీకరణ కొరకు ఈ వెబ్‌సైట్ ప్రచురించబడింది.
-                  </p>
+            <div className="mt-8 pt-6 border-t border-slate-200/80 text-xs sm:text-sm text-slate-700 bg-white/90 p-5 rounded-xl border border-slate-200 shadow-xs">
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+                  <span className="font-extrabold text-slate-900 tracking-wide uppercase text-sm">G MALLIKARJUNA REDDY</span>
+                  <span className="text-slate-400">•</span>
+                  <span className="text-xs font-bold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded">
+                    Paid for by G MALLIKARJUNA REDDY
+                  </span>
                 </div>
+
+                <p className="font-semibold text-slate-900 text-sm">
+                  Official campaign website of G MALLIKARJUNA REDDY, Candidate for Chairman, Adoni Municipality
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs font-medium text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-200">
+                  <div><strong>Address:</strong> ADONI, AP</div>
+                  <div><strong>Phone:</strong> <a href="tel:+919010452529" className="text-blue-900 hover:underline">+91 9010452529</a></div>
+                  <div><strong>Email:</strong> <a href="mailto:info@mallikarjunareddy.online" className="text-blue-900 hover:underline">info@mallikarjunareddy.online</a></div>
+                </div>
+
+                <p className="font-telugu text-xs text-slate-600">
+                  ఆదోని మునిసిపాలిటీ ఎన్నికల అధికారిక సమాచారం మరియు మెటా (Meta / Facebook) ప్రకటనల ధ్రువీకరణ కొరకు ఈ వివరాలు ప్రచురించబడ్డాయి.
+                </p>
               </div>
             </div>
 
@@ -724,21 +755,59 @@ export default function App() {
 
       {/* SECTION 5: FOOTER */}
       <footer className="mt-auto bg-slate-900 text-slate-300 py-12 border-t-4 border-emerald-600">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-slate-800">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-8">
+          
+          {/* Official Campaign Verification Card in Footer */}
+          <div className="bg-slate-800/95 rounded-2xl p-6 sm:p-7 border border-slate-700 shadow-md">
+            <div className="border-l-4 border-emerald-500 pl-4 sm:pl-5 space-y-2.5">
+              <div className="flex flex-wrap items-center gap-3">
+                <h3 className="text-white font-black text-xl sm:text-2xl tracking-wide">
+                  G MALLIKARJUNA REDDY
+                </h3>
+                <span className="bg-emerald-600 text-white font-bold text-xs uppercase px-2.5 py-1 rounded tracking-wider">
+                  Paid for by G MALLIKARJUNA REDDY
+                </span>
+              </div>
+
+              <p className="text-emerald-300 font-semibold text-sm sm:text-base">
+                Official campaign website of G MALLIKARJUNA REDDY, Candidate for Chairman, Adoni Municipality
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 text-sm text-slate-200">
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span><strong>Address:</strong> ADONI, AP</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <a href="tel:+919010452529" className="hover:text-white hover:underline">
+                    <strong>Phone:</strong> +91 9010452529
+                  </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail className="w-4 h-4 text-blue-400 shrink-0" />
+                  <a href="mailto:info@mallikarjunareddy.online" className="hover:text-white hover:underline break-all">
+                    <strong>Email:</strong> info@mallikarjunareddy.online
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-slate-800">
             {/* Candidate Details */}
             <div className="space-y-1">
               <div className="font-telugu text-xl font-bold text-white">
                 {candidateData.nameTe}
               </div>
-              <div className="text-lg font-bold text-white tracking-wide">
-                {candidateData.nameEn}
+              <div className="text-lg font-black text-white tracking-wide">
+                G MALLIKARJUNA REDDY
               </div>
-              <div className="text-sm text-emerald-400 font-medium">
+              <div className="text-sm text-emerald-400 font-semibold">
                 Candidate for Chairman, Adoni Municipality
               </div>
               <div className="text-sm text-slate-400">
-                Adoni, Kurnool District, Andhra Pradesh
+                Full Address: {candidateData.address}
               </div>
               <div className="font-telugu text-xs text-slate-400">
                 ఆదోని, కర్నూలు జిల్లా, ఆంధ్రప్రదేశ్
@@ -752,7 +821,7 @@ export default function App() {
                 className="flex items-center gap-2 hover:text-emerald-400 transition"
               >
                 <Phone className="w-4 h-4 text-emerald-500" />
-                <span>{candidateData.phone}</span>
+                <span>+91 9010452529</span>
               </a>
               <span className="hidden sm:inline text-slate-700">•</span>
               <a
@@ -770,17 +839,17 @@ export default function App() {
           </div>
 
           {/* Mandatory Footer Publication Notice & Copyright */}
-          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400 text-center sm:text-left">
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400 text-center sm:text-left">
             <div className="space-y-0.5">
               <p className="font-medium text-slate-300">
-                Website published by G Mallikarjuna Reddy
+                Official campaign website of G MALLIKARJUNA REDDY, Candidate for Chairman, Adoni Municipality • Paid for by G MALLIKARJUNA REDDY
               </p>
               <p className="font-telugu text-slate-400">
-                జి. మల్లికార్జున రెడ్డి గారిచే ప్రచురించబడిన వెబ్‌సైట్
+                జి. మల్లికార్జున రెడ్డి గారిచే ప్రచురించబడిన అధికారిక ఎన్నికల వెబ్‌సైట్
               </p>
             </div>
             <div className="text-slate-500">
-              © {new Date().getFullYear()} {candidateData.nameEn}. All Rights Reserved.
+              © {new Date().getFullYear()} G MALLIKARJUNA REDDY. All Rights Reserved.
             </div>
           </div>
         </div>
